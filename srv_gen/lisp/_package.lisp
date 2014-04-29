@@ -1,0 +1,15 @@
+(cl:defpackage estop_control-srv
+  (:use )
+  (:export
+   "EMPTY"
+   "<EMPTY-REQUEST>"
+   "EMPTY-REQUEST"
+   "<EMPTY-RESPONSE>"
+   "EMPTY-RESPONSE"
+   "ESTOPSIGNAL"
+   "<ESTOPSIGNAL-REQUEST>"
+   "ESTOPSIGNAL-REQUEST"
+   "<ESTOPSIGNAL-RESPONSE>"
+   "ESTOPSIGNAL-RESPONSE"
+  ))
+

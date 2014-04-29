@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/build/devel/setup.sh
