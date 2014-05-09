@@ -1,3 +1,6 @@
+// Creates ROS service that recieves a message from a client and 
+// sends it to the arduino to control the estop relay
+
 #include "ros/ros.h"
 #include "estop_control/estopSignal.h"
 #include <SerialStream.h>
@@ -45,7 +48,7 @@ int main(int argc, char **argv)
 void initializeSerialPort ()
 {
     // Open serial port
-    serial_port.Open("/dev/ttyACM1"); // TODO: connect to arduino automatically
+    serial_port.Open("/dev/ttyACM0"); // TODO: connect to arduino automatically
     if (!serial_port.good()) {
         ROS_ERROR("Error: Could not open serial port.");
         exit(1);

@@ -1,3 +1,6 @@
+// Sends a heartbeat service at 10Hz
+// This node should be run from RViz
+
 #include "ros/ros.h"
 #include <cstdlib>
 #include "std_srvs/Empty.h"

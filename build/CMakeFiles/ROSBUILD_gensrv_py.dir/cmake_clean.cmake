@@ -4,6 +4,7 @@ FILE(REMOVE_RECURSE
   "../src/estop_control/srv"
   "CMakeFiles/ROSBUILD_gensrv_py"
   "../src/estop_control/srv/__init__.py"
+  "../src/estop_control/srv/_Empty.py"
   "../src/estop_control/srv/_estopSignal.py"
 )
 

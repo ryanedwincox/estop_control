@@ -30,12 +30,20 @@ ros/assert.h
 ros/service_traits.h
 ../srv_gen/cpp/include/estop_control/ros/service_traits.h
 
-/home/underwater-haptics-3/ros_workspace/sandbox/estop_control/src/estop_control_client.cpp
+/home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/src/estop_control_client.cpp
 ros/ros.h
-/home/underwater-haptics-3/ros_workspace/sandbox/estop_control/src/ros/ros.h
+/home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/src/ros/ros.h
 estop_control/estopSignal.h
-/home/underwater-haptics-3/ros_workspace/sandbox/estop_control/src/estop_control/estopSignal.h
+/home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/src/estop_control/estopSignal.h
+SerialStream.h
+-
+iostream
+-
+unistd.h
+-
 cstdlib
+-
+string
 -
 
 /opt/ros/groovy/include/XmlRpcDecl.h

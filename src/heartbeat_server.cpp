@@ -1,3 +1,6 @@
+// Creates ROS service which recieves a heartbeat service and send the estop command to 
+// the estop control server when the hearbeats are not recieved
+
 #include "ros/ros.h"
 #include "std_srvs/Empty.h"
 #include "estop_control/estopSignal.h"

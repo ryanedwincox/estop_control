@@ -3,6 +3,7 @@ FILE(REMOVE_RECURSE
   "../srv_gen"
   "../src/estop_control/srv"
   "CMakeFiles/ROSBUILD_gensrv_cpp"
+  "../srv_gen/cpp/include/estop_control/Empty.h"
   "../srv_gen/cpp/include/estop_control/estopSignal.h"
 )
 

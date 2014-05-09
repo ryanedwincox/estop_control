@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/underwater-haptics-3/ros_workspace/sandbox/estop_control
+CMAKE_SOURCE_DIR = /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/build
+CMAKE_BINARY_DIR = /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/estop_control_client.dir/depend.make
@@ -67,17 +67,17 @@ CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o: /opt/ros/gro
 CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o: /opt/ros/groovy/share/rospack/package.xml
 CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o: /opt/ros/groovy/share/roslib/package.xml
 CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o: /opt/ros/groovy/share/rospy/package.xml
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o -c /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/src/estop_control_client.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o -c /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/src/estop_control_client.cpp
 
 CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/src/estop_control_client.cpp > CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/src/estop_control_client.cpp > CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.i
 
 CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/src/estop_control_client.cpp -o CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/src/estop_control_client.cpp -o CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.s
 
 CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o.requires:
 .PHONY : CMakeFiles/estop_control_client.dir/src/estop_control_client.cpp.o.requires
@@ -113,6 +113,6 @@ CMakeFiles/estop_control_client.dir/clean:
 .PHONY : CMakeFiles/estop_control_client.dir/clean
 
 CMakeFiles/estop_control_client.dir/depend:
-	cd /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/underwater-haptics-3/ros_workspace/sandbox/estop_control /home/underwater-haptics-3/ros_workspace/sandbox/estop_control /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/build /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/build /home/underwater-haptics-3/ros_workspace/sandbox/estop_control/build/CMakeFiles/estop_control_client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/build /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/build /home/pierre/Dropbox/uh/uh1/ros_ws/estop_control/build/CMakeFiles/estop_control_client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/estop_control_client.dir/depend
 

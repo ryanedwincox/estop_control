@@ -1,3 +1,6 @@
+// This is a ROS service that sends the software estop state to control computer
+// This node should be run from RViz
+
 #include "ros/ros.h"
 #include "estop_control/estopSignal.h"
 #include <SerialStream.h>
