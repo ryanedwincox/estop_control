@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 void initializeSerialPort ()
 {
     // Open serial port
-    serial_port.Open("/dev/ttyACM0"); // TODO: connect to arduino automatically
+    serial_port.Open("/dev/ttyACM2"); // TODO: connect to arduino automatically
     if (!serial_port.good()) {
         ROS_ERROR("Error: Could not open serial port.");
         exit(1);
