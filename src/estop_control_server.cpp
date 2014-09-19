@@ -24,7 +24,7 @@ bool add(estop_control::estopSignal::Request  &req,
       serial_port << message;  // send message to arduino
       res.handshake = true;
       ROS_INFO("message: %ld", (long int)req.message);
-      ROS_INFO("sending back response: [%d]", res.handshake);
+      //ROS_INFO("sending back response: [%d]", res.handshake);
   }
 
   return true;
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 void initializeSerialPort ()
 {
     // Open serial port
-    serial_port.Open("/dev/ttyACM2"); // TODO: connect to arduino automatically
+    serial_port.Open("/dev/serial/by-id/usb-Arduino_LLC_Arduino_Micro-if00");
     if (!serial_port.good()) {
         ROS_ERROR("Error: Could not open serial port.");
         exit(1);
