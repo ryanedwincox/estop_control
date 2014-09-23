@@ -25,8 +25,9 @@ bool add(estop_control::estopSignal::Request  &req,
       res.handshake = true;
       ROS_INFO("message: %ld", (long int)req.message);
       //ROS_INFO("sending back response: [%d]", res.handshake);
+  } else {
+      ROS_INFO("Serial issue...");
   }
-
   return true;
 }
 
@@ -38,10 +39,30 @@ int main(int argc, char **argv)
 
     ros::ServiceServer service = n.advertiseService("estop_control", add);
     ROS_INFO("Ready for message");
+
+    ros::Rate r(5); // 2Hz
+
+    int i = 0;
+
+    //ros::spin();
+    // TODO: just use ros::spin()
     while (ros::ok())
     {
-    ros::spinOnce();
+        if (!serial_port.good()) {
+            service.shutdown();
+            return 0;
+        }
+        r.sleep();
+        ROS_INFO("running");
+        ros::spinOnce();
+
+        i++;
+        if (i > 25) {
+            serial_port.flush();
+            i = 0;
+        }
     }
+    service.shutdown();
     return 0;
 }
 
@@ -88,4 +109,5 @@ void initializeSerialPort ()
         ROS_ERROR("Error: Could not set hardware flow control.");
         exit(1);
     }
+    ROS_INFO("Serial initialized");
 }

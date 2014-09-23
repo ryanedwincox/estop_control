@@ -21,7 +21,7 @@ bool callback(std_srvs::Empty::Request  &req,
     return true;
 }
 
-void heartMonitor(ros::NodeHandle n)
+void heartMonitor(ros::NodeHandle n, ros::ServiceClient client, estop_control::estopSignal srv)
 {
     time(&now);  // get current time; same as: now = time(NULL)
 
@@ -36,8 +36,8 @@ void heartMonitor(ros::NodeHandle n)
     {
         ROS_INFO("heart stopped"); //estop
 
-        ros::ServiceClient client = n.serviceClient<estop_control::estopSignal>("estop_control");
-        estop_control::estopSignal srv;
+//        ros::ServiceClient client = n.serviceClient<estop_control::estopSignal>("estop_control");
+//        estop_control::estopSignal srv;
         srv.request.message = 1;
         if (client.call(srv))
         {
@@ -47,20 +47,27 @@ void heartMonitor(ros::NodeHandle n)
         {
           ROS_ERROR("Failed to call service estop_control");
         }
+        //client.shutdown();
     }
 }
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "heartbeat_server");
-  ros::NodeHandle n;
+    ros::init(argc, argv, "heartbeat_server");
+    ros::NodeHandle n;
+    
+    ros::ServiceServer service = n.advertiseService("heartbeat", callback);
 
-  ros::ServiceServer service = n.advertiseService("heartbeat", callback);
-  ROS_INFO("Normal");
-  while(ros::ok())
-  {
-      ros::spinOnce();
-      heartMonitor(n);
-  }
-  return 0;
+    ros::ServiceClient client = n.serviceClient<estop_control::estopSignal>("estop_control");
+    estop_control::estopSignal srv;
+
+    ROS_INFO("Normal");
+    while(ros::ok())
+    {
+        ros::spinOnce();
+        heartMonitor(n, client, srv);
+    }
+    client.shutdown();
+    service.shutdown();
+    return 0;
 }
