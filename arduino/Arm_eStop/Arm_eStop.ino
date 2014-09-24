@@ -4,15 +4,15 @@
 // To turn on relay all estops must be disengaged and the run 
 // signal from software must be recieved
 
-// TODO: estop if serial connection is lost
-
 const int RELAY_PIN = 4;
 const int ESTOP_PIN = 3;
+const int SERIAL_TIMEOUT_VALUE = 30000;
 
 boolean relay;
 boolean eStop;
 boolean softStop;
 boolean run;
+int noComm;
 
 void setup() {
   Serial.begin(9600);
@@ -27,6 +27,20 @@ void loop() {
   eStop = digitalRead(ESTOP_PIN);
   
   int serialIn = Serial.read();  
+  
+  // Counts how many messages missed
+  if (serialIn == -1) {
+    noComm++;
+  } else {
+    noComm = 0;
+  }
+  
+  // If too many massages missed then estop
+  if (noComm > SERIAL_TIMEOUT_VALUE) {  
+    Serial.println("Serial timeout");
+    softStop = HIGH;
+    noComm = 0;
+  }
   
   // debugging information printed to terminal
   if (serialIn != -1) { 
