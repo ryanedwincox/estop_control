@@ -45,6 +45,7 @@ void loop() {
   // debugging information printed to terminal
   if (serialIn != -1) { 
     Serial.println(serialIn);
+    Serial.flush();
   }
   
   if (serialIn == 49) { // ascii '1'

@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     ros::ServiceServer service = n.advertiseService("estop_control", add);
     ROS_INFO("Ready for message");
 
-    ros::Rate r(5); // 2Hz
+    ros::Rate r(25); // 25Hz
 
     int i = 0;
 
@@ -56,11 +56,11 @@ int main(int argc, char **argv)
         ROS_INFO("running");
         ros::spinOnce();
 
-        i++;
-        if (i > 25) {
+//        i++;
+//        if (i > 25) {
             serial_port.flush();
-            i = 0;
-        }
+//            i = 0;
+//        }
     }
     service.shutdown();
     return 0;
