@@ -16,15 +16,14 @@ SerialStream serial_port;
 
 void initializeSerialPort();
 
-bool add(estop_control::estopSignal::Request  &req,
+bool pub(estop_control::estopSignal::Request  &req,
          estop_control::estopSignal::Response &res)
 {
   if(serial_port.good()) {
       int message = req.message;
       serial_port << message;  // send message to arduino
       res.handshake = true;
-      ROS_INFO("message: %ld", (long int)req.message);
-      //ROS_INFO("sending back response: [%d]", res.handshake);
+      ROS_INFO("message: %d", message);
   } else {
       ROS_INFO("Serial issue...");
   }
@@ -37,15 +36,11 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "estop_control_server");
     ros::NodeHandle n;
 
-    ros::ServiceServer service = n.advertiseService("estop_control", add);
+    ros::ServiceServer service = n.advertiseService("estop_control", pub);
     ROS_INFO("Ready for message");
 
     ros::Rate r(25); // 25Hz
 
-    int i = 0;
-
-    //ros::spin();
-    // TODO: just use ros::spin()
     while (ros::ok())
     {
         if (!serial_port.good()) {
@@ -56,11 +51,7 @@ int main(int argc, char **argv)
         ROS_INFO("running");
         ros::spinOnce();
 
-//        i++;
-//        if (i > 25) {
-            serial_port.flush();
-//            i = 0;
-//        }
+        serial_port.flush();
     }
     service.shutdown();
     return 0;
