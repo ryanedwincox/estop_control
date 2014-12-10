@@ -20,7 +20,8 @@ bool pub(estop_control::estopSignal::Request  &req,
          estop_control::estopSignal::Response &res)
 {
   if(serial_port.good()) {
-      int message = req.message;
+      int message = 0;
+      message = req.message;
       serial_port << message;  // send message to arduino
       res.handshake = true;
       ROS_INFO("message: %d", message);
